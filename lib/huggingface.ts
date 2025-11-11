@@ -2,7 +2,7 @@ import type { Comment, SentimentAnalysis } from "./types"
 
 const HF_API_KEY = process.env.HUGGINGFACE_API_KEY
 const HF_MODEL = "cardiffnlp/twitter-xlm-roberta-base-sentiment"
-const HF_API_URL = `https://api-inference.huggingface.co/models/${HF_MODEL}`
+const HF_API_URL = `https://router.huggingface.co/hf-inference/models/${HF_MODEL}`
 
 if (!HF_API_KEY) {
   throw new Error("Missing HUGGINGFACE_API_KEY environment variable")
@@ -128,3 +128,4 @@ function mapSentimentToScore(label: "positive" | "neutral" | "negative", confide
       return 0
   }
 }
+
